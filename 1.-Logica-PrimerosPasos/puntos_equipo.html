@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function jumpLine(){
+            document.write("<br");
+        }
+
+        function printLine(line){
+            document.write(line);
+            jumpLine();
+        }
+
+        //text * num then num is casted as num
+        //  "10" * 2 = 20
+
+        //text + num then num is casted as text
+        // "10" + 2 = 102
+        var victories = parseInt(prompt("How many victories the team have?"));
+        var ties = parseInt(prompt("How many ties the team have?"));
+        var score = (victories*3)+ties;
+
+        
+
+
+        printLine("Score = " + score);
+
+        
+
+    </script>
+</body>
+</html>

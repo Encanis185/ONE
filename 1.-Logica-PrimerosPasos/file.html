@@ -1,0 +1,50 @@
+<html>
+<meta charset="UTF-8">
+
+<h1>Tittle</h1>
+<br>
+<br>
+<BR>
+
+Text with no tag    <a href="http://www.google.com">Enlace</a>
+
+
+<script>
+    //alert("Using JS code");
+    //alert("New alert");
+    var x = 0;
+    document.write("<br>Writing text inside a script");
+    document.write("<br>"); //Interprete a tag
+    document.write("1"+"2"+3); //string + number, cast number to string
+    document.write(33/3); //Its interperted as numbers, so the browser makes the operation
+
+    document.write("<br>Printing a var: " + x + "<br>")
+
+    x = 100;
+
+    document.write("<br>Var with a new value: " + Math.round(x/3) + "<br>");
+
+    var stringVar = "Hola :)";
+    var numVar = 101010;
+
+    document.write(stringVar + numVar);
+
+    var newLine = "<br>";
+    document.write(newLine*3);
+
+    function newFunction(nombre){
+        document.write("<br>Printing text using a function :D<br>");
+        document.write(nombre)
+    }
+
+    newFunction("Josafat");
+
+</script>
+
+<!--HTML tags can be used upper or lower case, but the convention is use lower case
+To execute JS code it must be between a 'script' tag
+
+
+-->
+
+</html>
