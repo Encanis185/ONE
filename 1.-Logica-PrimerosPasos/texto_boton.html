@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input/>
+    <button>Verification</button>
+    <script>
+        //var secret = Math.round(Math.random()*10);
+        function randomAssing(){
+
+            return Math.round(Math.random()*10);
+        }
+
+        function assingRandomN(value){
+            var secretValues = [];
+            for(var i = 0; i < value; ){
+                var found = false;
+                randomNumber = randomAssing();
+                
+
+                for(var j = 0; j < secretValues.length; j++){
+                    if(randomNumber == secretValues[j]){
+                        found = true;
+                    }
+                }
+
+                if(found == false){
+                    secretValues.push(randomNumber);
+                    i++;
+                }
+            }
+            
+            return secretValues;
+        }
+
+        var secretValues = assingRandomN(4);
+
+
+        var input = document.querySelector("input");
+
+        function checkValue(){
+
+            for(var i = 0; i < secretValues.length; i++){
+                var found = false;
+                if(parseInt(input.value) == secretValues[i]){
+                    alert("RIGHT :D");
+                    found = true;
+                    break;
+                }
+                
+            }
+            if(found == false){
+                alert("Wrong answer :(");
+            }
+            input.value = ""; //cleans field
+            input.focus(); //Sets pointer on input
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = checkValue;
+        
+    </script>
+</body>
+</html>
