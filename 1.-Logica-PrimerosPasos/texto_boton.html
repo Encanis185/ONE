@@ -21,16 +21,18 @@
                 var found = false;
                 randomNumber = randomAssing();
                 
-
-                for(var j = 0; j < secretValues.length; j++){
-                    if(randomNumber == secretValues[j]){
-                        found = true;
+                if(randomNumber != 0){
+                    for(var j = 0; j < secretValues.length; j++){
+                        if(randomNumber == secretValues[j]){
+                            found = true;
+                            break;
+                        }
                     }
-                }
 
-                if(found == false){
-                    secretValues.push(randomNumber);
-                    i++;
+                    if(found == false){
+                        secretValues.push(randomNumber);
+                        i++;
+                    }
                 }
             }
             

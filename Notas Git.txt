@@ -1,0 +1,63 @@
+git init --bare [servidor .. local?]
+git clone [direccion] [nombre con el que queremos guardarlo localmente]
+git remote add [nombreRepositorio] [Ruta a donde queremos que se establezca el servidor remoto]
+	el nombreRepositorio por convenio para servidores remotos es "main"
+git remote // Muestra servidores remotos
+git push [nombreRepo al que queremos enviar] [nombre de rama a la que enviaremos] //Envia cambios al repo
+git remote rename [nombreServidor] [nuevoNombre] //Cambia el nombre del repo
+git pull [nombreServidor] [ramaPull] //Jala codigo del repositorio
+
+git branch // revisa la rama actual
+git branch [nombreRama] crea una nueva rama
+git checkout [nombreRama] cambiar a rama nombreRama
+git checkout -b [nombreRama] crea una nueva rama y se cambia a ella
+
+git merge [rama "distante" que queremos mezclar en la rama que estamos "parados"] //NO SE TRAE LOS COMMITS
+		Crea un nuevo commit al unirlas
+
+git rebase [rama "distante" que se quiere mezclar] //SE TRAE LOS COMMITS DE LA RAMA
+
+git log --graph // Nos muestra un grafo con los cambios
+
+CONFLICTOS!!!!
+git merge [nombreRama] -> Terminal donde se muestran las coliciones
+corregir/Modificar los que querramos aplicar/Eliminar los que no se quieren
+git status
+git add
+git commit
+
+Antes de enviar una modificacion (push) se debe de actualizar el trabajo local (pull)
+
+CONTROL - Z
+git restore [nombreArchivo] //Se hace un "control-z" en los archivos modificados (los de color rojos xd)
+git restore --staged [nombreArchivo] // Saca el archivo del estado de "add" (cuando estan en verde, antes de commit)
+git log -> copiar el ID del commit que querramos hacer "control-Z"
+git revert [idCommit] //Para revertir el commit (genera un nuevo commit)
+
+GUARDANDO CAMBIOS PARA DESPUES (NO COMMIT!!!)_
+
+git stash //Guarda los cambios realizados en los archivos en un WIP
+--2 opciones
+git stash list //Lista todos los stash del proyecto
+git stash pop //Del stash agarra la ultima modificacion, hace un merge con el proyecto
+
+git checkout [idCommit] // Nos lleva atras en el tiempo a un commit en especifico
+Entramos en un estado "en el que HEAD esta despegado"
+Si realizamos cambios y queremos guardarlos debemos primero de crear una nueva rama
+Si hacemos commit sin eso entonces se crea un commit "que no pertenece a nada"
+git checkout -b [nuevaRama]
+Si queremos regresar al punto de "donde partimos" seria git checkout "nombre de rama donde partimos inicialmente"
+
+VIENDO MODIFICACIONES
+git diff [idCommit]..[idCommit2] //Desde commit 1 hasta commit 2 mostrar cambios IMPORTANTE DOS PUNTOS ..
+
+TAGS y VERSIONES
+La tag define un punto en el que no deberia ser editable nunca mas.
+Significa que podemos establecer una bandera en la que podramos regresar siempre a ese punto
+
+git tag -a [nombreTag] -m "mensajeTag"
+git tag //Lista todas las tags
+git push [rama/origin] [nombreTag]
+
+en github en la pestaña de tag se puede descargar un .zip con los archivos de la tag
+ 
