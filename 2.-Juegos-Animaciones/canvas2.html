@@ -8,17 +8,25 @@
 <body>
     <canvas width="600" height="400"></canvas>
     <script>
-        var screen = document.querySelector("canvas");
-        var brush = screen.getContext("2d");
 
-        brush.fillStyle = "green";
-        brush.fillRect(0,0,50,50);
-        brush.strokeStyle = "black";
-        brush.strokeRect();
-        brush.fillStyle = "green";
-        brush.fillRect(50,0,50,50);
-        brush.fillStyle = "lightgrey";
-        brush.fillRect(100,0,50,50);
+        function drawSquare(posX,posY,size,color){
+            var screen = document.querySelector("canvas");
+            var brush = screen.getContext("2d");
+
+            brush.fillStyle = color;
+            brush.fillRect(posX,posY,size,size);
+            brush.strokeStyle = "black";
+            brush.strokeRect(posX,posY,size,size);
+        }
+
+        for(var i = 0; i<10; i++)
+        drawSquare(i*50,0,50,"green");
+        
+
+        
+
+        
+        
     </script>
 </body>
 </html>
