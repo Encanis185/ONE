@@ -150,3 +150,45 @@ th, td{
     border: 1px solid #000000;
     padding: 8px 15px;
 }
+
+
+
+/*
+CSS para pagina main
+*/
+
+.banner{
+    width: 100%;
+
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.principal p{
+    margin: 0 0 1em;
+
+}
+
+.principal strong{
+    font-weight: bold;
+}
+
+.principal em{
+    font-style: italic;
+}
+
+.utensilios{
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 0;
+    border-radius: 5px;
+}
+
+.img-ref{
+    width: 60%;
+}
